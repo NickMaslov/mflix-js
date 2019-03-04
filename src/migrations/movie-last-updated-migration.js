@@ -36,7 +36,6 @@ const MongoError = require("mongodb").MongoError
       .find(predicate, projection)
       .toArray()
 
-  console.log('------------', cursor[0])
     const moviesToMigrate = cursor.map(({ _id, lastupdated }) => ({
       updateOne: {
         filter: { _id: ObjectId(_id) },
